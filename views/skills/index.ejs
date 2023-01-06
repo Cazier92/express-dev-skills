@@ -11,12 +11,18 @@
   <a href="/">Return to Home</a>
   <ul>
     <% skills.forEach(skill => { %>
-     <li>
-      <a href="/skills/<%= skill._id %> "><%= skill.type %> </a>
-      -
-      <%= skill.bryceKnows ? 'Bryce has this skill!' : 'Bryce is still learning this' %> 
-     </li>
-     /skills/<%= skill._id %> 
+      <li>
+        <form 
+        action="/skills/<%= skill._id %>?_method=DELETE" 
+        class="delete-form" 
+        method="POST">
+        <button type="submit">X</button>
+        </form>
+        <a href="/skills/<%= skill._id %> "><%= skill.type %> </a>
+        -
+        <%= skill.bryceKnows ? 'Bryce has this skill!' : 'Bryce is still learning this' %> 
+      </li>
+      /skills/<%= skill._id %> 
     <% }) %>
   </ul>
   <a href="/skills/new">Add a Skill</a>
