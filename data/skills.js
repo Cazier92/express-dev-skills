@@ -3,3 +3,7 @@ const skills = [
   {type: 'css', bryceKnows: true},
   {type: 'js', bryceKnows: true}
 ]
+
+export {
+  skills,
+}
