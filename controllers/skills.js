@@ -21,7 +21,9 @@ function newSkill(req, res) {
 function create(req, res) {
   // console.log(req.body)
   // req.body.bryceKnows = false
-  (req.body.bryceKnows === 'on') ? req.body.bryceKnows = true : req.body.bryceKnows = false
+  // (req.body.bryceKnows === 'on') ? req.body.bryceKnows = true : req.body.bryceKnows = false
+  // Skill.create(req.body)
+  req.body.bryceKnows = !!req.body.bryceKnows
   Skill.create(req.body)
   .then(skill => {
     res.redirect('/skills')
